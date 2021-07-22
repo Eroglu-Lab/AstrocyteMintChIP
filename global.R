@@ -11,12 +11,27 @@ library(shinythemes)
 library(biomaRt)
 library(ggplot2)
 library(viridis)
-library(rdrop2)
+library(aws.s3)
 
 #read in data#
-token <- readRDS('token.rds')
-drop_download("/lab_kristina_new/mintchip/bigwigdata.rds", overwrite=TRUE)
-bwList <- readRDS('bigwigdata.rds')
+Sys.setenv("AWS_ACCESS_KEY_ID" = "AKIA2KPURUMOTSR5SJ6N",
+           "AWS_SECRET_ACCESS_KEY" = "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",
+           "AWS_DEFAULT_REGION" = "us-east-2")
+
+#read in data#
+Bucket <- get_bucket('mintchip-dev-bigwigs')
+objectList <- c()
+for (i in 1:length(Bucket)){
+  objectList[i] <- Bucket[[i]]$Key
+}
+
+bwList <- list()
+for (i in 1:length(objectList)){
+  bwList[i] <- s3read_using(object=objectList[i], bucket='mintchip-dev-bigwigs', FUN=function(x) import.bw(x, as='GRanges'))
+}
+names(bwList) <- gsub('.bam.bw', '', objectList)
+names(bwList) <- gsub('.bw', '', names(bwList))
+
 
 refGene <- read.csv('mm10_refGene_noDup.csv')
 
