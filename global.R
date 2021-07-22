@@ -11,6 +11,7 @@ library(shinythemes)
 library(biomaRt)
 library(ggplot2)
 library(viridis)
+library(rdrop2)
 
 #read in data#
 token <- readRDS('token.rds')
