@@ -15,7 +15,7 @@ library(viridis)
 #read in data#
 token <- readRDS('token.rds')
 drop_download("/lab_kristina_new/mintchip/bigwigdata.rds", overwrite=TRUE)
-bwList <- readRDS('D:/bigwigdata.rds')
+bwList <- readRDS('bigwigdata.rds')
 
 refGene <- read.csv('mm10_refGene_noDup.csv')
 
