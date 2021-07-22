@@ -11,8 +11,9 @@ library(shinythemes)
 library(biomaRt)
 library(ggplot2)
 library(viridis)
-library(aws.s3)
 
+#read in data#
+load('D:/Mintchip/WTdev/FilesForShiny/MintChIP-App/bigwigData.RData')
 refGene <- read.csv('mm10_refGene_noDup.csv')
 
 fpkm <- read.csv('fpkmLongFormat.csv')
