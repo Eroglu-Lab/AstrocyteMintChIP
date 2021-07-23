@@ -13,7 +13,7 @@ library(ggplot2)
 library(viridis)
 
 #read in data#
-load('D:/Mintchip/WTdev/FilesForShiny/MintChIP-App/bigwigData.RData')
+load('bigwigData.RData')
 refGene <- read.csv('mm10_refGene_noDup.csv')
 
 fpkm <- read.csv('fpkmLongFormat.csv')
