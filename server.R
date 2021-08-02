@@ -219,7 +219,11 @@ output$rna <- renderPlot({
   
   ggplot(fpkm_r(), aes(x=age, y=fpkm.long, fill=age)) + geom_bar(stat='identity') + 
     theme_minimal() + ylab('FPKM') +
+<<<<<<< HEAD
     xlab('') + scale_fill_manual(values=c('gray75', 'gray50', 'gray25', 'gray0')) + ggtitle(input$gene)
+=======
+    xlab('') + scale_fill_manual(values=c('gray75', 'gray50', 'gray25', 'gray0')) + ggtile(input$gene)
+>>>>>>> 89d68e442dc25a5ee3d16f9074723c1109208fe3
   
 })
 
