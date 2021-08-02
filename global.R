@@ -11,6 +11,7 @@ library(shinythemes)
 library(biomaRt)
 library(ggplot2)
 library(viridis)
+library(TxDb.Mmusculus.UCSC.mm10.knownGene)
 
 #read in data#
 load('bigwigData.RData')
