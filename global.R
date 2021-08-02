@@ -13,7 +13,7 @@ library(ggplot2)
 library(viridis)
 
 #read in data#
-load('bigwigData.RData')
+bwList <- readRDS('bigwigData.rds')
 refGene <- read.csv('mm10_refGene_noDup.csv')
 
 fpkm <- read.csv('fpkmLongFormat.csv')
