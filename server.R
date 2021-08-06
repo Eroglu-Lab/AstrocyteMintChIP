@@ -218,9 +218,8 @@ fpkm_r <- reactive({
 output$rna <- renderPlot({
   
   ggplot(fpkm_r(), aes(x=age, y=fpkm.long, fill=age)) + geom_bar(stat='identity') + 
-    theme_minimal() + ylab('FPKM') +  xlab('') + scale_fill_manual(values=c('gray75', 'gray50', 'gray25', 'gray0')) + ggtitle(input$gene)
+    theme_minimal() + ylab('FPKM') +  xlab('') + scale_fill_manual(values=c('gray75', 'gray50', 'gray25', 'gray0')) + ggtitle(print(input$gene))
 
-  
 })
 
 
